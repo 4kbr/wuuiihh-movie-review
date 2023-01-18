@@ -10,8 +10,8 @@ import {
 
 export default function Header() {
   return (
-    <div className="flex justify-between">
-      <div className="flex items-center">
+    <div className="bg-gray-600 text-gray-100 flex flex-col items-center sm:justify-between">
+      <div className="flex">
         <HeaderIcon Icon={HomeIcon} title="Home" />
         <HeaderIcon Icon={UserIcon} title="Account" />
         <HeaderIcon Icon={PhoneIcon} title="Contact" />

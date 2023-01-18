@@ -8,9 +8,9 @@ export default function HeaderIcon({
   title: string;
 }) {
   return (
-    <div>
+    <div className="mx-4 flex flex-col cursor-pointer hover:text-white lg:mx-6">
       <Icon className="h-8" />
-      <p>{title}</p>
+      <p className="my-2 select-none">{title}</p>
     </div>
   );
 }
