@@ -4,13 +4,13 @@ export default function HeaderIcon({
   Icon,
   title,
 }: {
-  Icon: JSXElementConstructor<JSX.Element>;
+  Icon: JSXElementConstructor<any>;
   title: string;
 }) {
   return (
-    <div className="mx-4 flex flex-col cursor-pointer hover:text-white lg:mx-6">
+    <div className="mx-4 flex flex-col cursor-pointer hover:text-white active:text-blue-400 lg:mx-6">
       <Icon className="h-8" />
-      <p className="my-2 select-none">{title}</p>
+      <p className="my-2">{title}</p>
     </div>
   );
 }

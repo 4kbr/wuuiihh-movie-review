@@ -10,7 +10,7 @@ import {
 
 export default function Header() {
   return (
-    <div className="bg-gray-600 text-gray-100 flex flex-col items-center sm:justify-between">
+    <div className="bg-gray-600 text-gray-300 flex flex-col items-center p-6 select-none sm:flex-row justify-between">
       <div className="flex">
         <HeaderIcon Icon={HomeIcon} title="Home" />
         <HeaderIcon Icon={UserIcon} title="Account" />
@@ -25,6 +25,7 @@ export default function Header() {
         alt={"IMDB image from wikipedia"}
         width={100}
         height={100}
+        className="cursor-pointer active:brightness-110"
       />
     </div>
   );
