@@ -1,10 +1,14 @@
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import Results from "@/components/Results";
+import { ConstartVar } from "@/utils/constant_var";
+import requests from "@/utils/requests";
+import { GetServerSideProps } from "next";
 import Head from "next/head";
-import React from "react";
 
-export default function index() {
+export default function index({ results }: { results: Array<any> }) {
+  // console.log({ results });
+
   return (
     <div>
       <Head>
@@ -23,8 +27,23 @@ export default function index() {
       {/* Navbar - Close*/}
 
       {/* Results */}
-      <Results />
+      <Results results={results} />
       {/* Results - Close*/}
     </div>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const genre = context.query.genre || "fetchTrending";
+  // const genrss = requests[genre as keyof typeof requests];
+  const request = await fetch(
+    `${ConstartVar.api}/3${requests[genre as keyof typeof requests].url}`
+    // `${ConstartVar.api}/3${requests[genre as keyof typeof requests].url}`
+  ).then((response) => response.json());
+
+  return {
+    props: {
+      results: request.results,
+    },
+  };
+};
