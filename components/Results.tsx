@@ -2,7 +2,7 @@ import Card from "./Card";
 
 export default function Results({ results }: { results: Array<any> }) {
   return (
-    <div>
+    <div className="bg-gray-600 text-gray-200 select-none sm:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
       {results.map((result, i: number) => (
         <Card key={i} result={result} />
       ))}
