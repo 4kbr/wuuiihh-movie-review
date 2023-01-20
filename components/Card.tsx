@@ -15,6 +15,7 @@ export default function Card({ result }: any) {
         height={100}
         layout="responsive"
       />
+      
       <div className="p-2">
         <p className="truncate text-lg">{result.overview}</p>
         <h2 className="text-lg font-bold">{result.title || result.name}</h2>
